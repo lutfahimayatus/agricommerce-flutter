@@ -1,4 +1,5 @@
 import 'package:e_commerce_flutter/src/data/transaction_repository.dart';
+import 'package:e_commerce_flutter/src/utils/money_format.dart';
 import 'package:e_commerce_flutter/src/view/screen/transaction_detail/transaction_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -34,8 +35,7 @@ class TransactionScreen extends ConsumerWidget {
                 },
                 child: ListTile(
                   title: Text(transactions[index].city),
-                  subtitle:
-                      Text('Rp ${transactions[index].totalPay.toString()}'),
+                  subtitle: Text(formatMoney(transactions[index].totalPay)),
                   trailing: const Icon(Icons.arrow_right),
                 ),
               ),

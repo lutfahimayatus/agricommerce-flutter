@@ -1,5 +1,6 @@
 import 'package:e_commerce_flutter/src/data/product_repository.dart';
 import 'package:e_commerce_flutter/src/domain/product/product.dart';
+import 'package:e_commerce_flutter/src/utils/money_format.dart';
 import 'package:e_commerce_flutter/src/view/screen/product/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -124,7 +125,7 @@ class _ProductGridViewState extends ConsumerState<ProductGridView> {
             Row(
               children: [
                 Text(
-                  product.price.toString(),
+                  formatMoney(product.price),
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 const SizedBox(width: 3),

@@ -1,6 +1,7 @@
 import 'package:e_commerce_flutter/core/extensions.dart';
 import 'package:e_commerce_flutter/src/data/cart_repository.dart';
 import 'package:e_commerce_flutter/src/domain/cart/cart_item.dart';
+import 'package:e_commerce_flutter/src/utils/money_format.dart';
 import 'package:e_commerce_flutter/src/view/screen/cart/controllers/qty_controller.dart';
 import 'package:e_commerce_flutter/src/view/screen/cart/empty_cart.dart';
 import 'package:e_commerce_flutter/src/view/screen/checkout/checkout_screen.dart';
@@ -101,7 +102,7 @@ class CartScreen extends ConsumerWidget {
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      item.price.toString(),
+                      formatMoney(item.price),
                       style: const TextStyle(
                         fontWeight: FontWeight.w900,
                         fontSize: 23,
@@ -175,7 +176,7 @@ class CartScreen extends ConsumerWidget {
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
           ),
           Text(
-            cartTotal.toString(),
+            formatMoney(cartTotal),
             style: const TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.w900,

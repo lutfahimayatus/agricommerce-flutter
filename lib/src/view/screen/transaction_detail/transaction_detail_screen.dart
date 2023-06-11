@@ -1,5 +1,6 @@
 import 'package:e_commerce_flutter/src/domain/transaction/transaction.dart';
 import 'package:e_commerce_flutter/src/utils/async_ui.dart';
+import 'package:e_commerce_flutter/src/utils/money_format.dart';
 import 'package:e_commerce_flutter/src/view/screen/transaction_detail/controllers/upload_proof_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -33,7 +34,7 @@ class TransactionDetailScreen extends ConsumerWidget {
             children: [
               const Text('Total Bayar'),
               Text(
-                transaction.totalPay.toString(),
+                formatMoney(transaction.totalPay),
                 style: textTheme.headlineMedium,
               ),
               const SizedBox(
