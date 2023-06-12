@@ -11,8 +11,8 @@ Dio client(ClientRef ref) {
 
   final dio = Dio(
     BaseOptions(
-      baseUrl: 'http://127.0.0.1:8000',
-      headers: {'Authorization': 'Bearer $token', 'Accept': 'application/json'},
+      baseUrl: 'https://a6ce-114-125-88-120.ngrok-free.app',
+      headers: {'Authorization': 'Bearer $token', 'Accept': 'application/json', 'ngrok-skip-browser-warning' : '1'},
     ),
   );
 
