@@ -61,6 +61,18 @@ class TransactionDetailScreen extends ConsumerWidget {
                 transaction.trackingNumber ?? '-',
                 style: textTheme.headlineMedium,
               ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              const Text('Nomor Rekening Pembayaran'),
+              Text(
+                'BRI: 089602577390',
+                style: textTheme.headlineMedium,
+              ),
+              Text(
+                'BCA: 089602577390',
+                style: textTheme.headlineMedium,
+              ),
               const Spacer(),
               SizedBox(
                 width: double.infinity,
