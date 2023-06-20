@@ -13,7 +13,12 @@ Dio client(ClientRef ref) {
     BaseOptions(
       // Tiap kali generate url, baseUrl ni ganti
       baseUrl: 'https://d4a5-180-253-163-126.ngrok-free.app',
-      headers: {'Authorization': 'Bearer $token', 'Accept': 'application/json', 'ngrok-skip-browser-warning' : '1'},
+      //baseUrl: 'http://127.0.0.1:8000',
+      headers: {
+        'Authorization': 'Bearer $token',
+        'Accept': 'application/json',
+        'ngrok-skip-browser-warning': '1'
+      },
     ),
   );
 

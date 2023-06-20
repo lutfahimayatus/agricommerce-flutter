@@ -106,8 +106,8 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
       ));
 
   Widget registerButton(AsyncValue<void> controller) => Positioned(
-        left: MediaQuery.of(context).size.width / 4,
-        bottom: 40,
+        left: MediaQuery.of(context).size.width / 5,
+        bottom: 45,
         child: InkWell(
           onTap: () {
             ref.read(registerControllerProvider.notifier).submit(
@@ -157,18 +157,22 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
       );
 
   Widget registerForm(AsyncValue<void> controller) => SizedBox(
-        height: 380,
+        height: MediaQuery.of(context).size.height / 2,
+        width: MediaQuery.of(context).size.width / 1.15,
         child: Stack(
           children: [
             Container(
-              height: 300,
+              height: MediaQuery.of(context).size.height / 2,
               width: MediaQuery.of(context).size.width,
-              padding: const EdgeInsets.only(left: 32.0, right: 12.0),
+              padding: const EdgeInsets.only(left: 15.0, right: 15.0),
               decoration: const BoxDecoration(
                   color: Color.fromRGBO(255, 255, 255, 0.8),
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      bottomLeft: Radius.circular(10))),
+                    topLeft: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomRight: Radius.circular(10),
+                  )),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[

@@ -84,8 +84,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       );
 
   Widget loginButton(AsyncValue<void> controller) => Positioned(
-        left: MediaQuery.of(context).size.width / 4,
-        bottom: 40,
+        left: 81.5,
+        right: 81.5,
+        bottom: 18,
         child: InkWell(
           onTap: () async {
             ref
@@ -131,18 +132,20 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       );
 
   Widget loginForm(AsyncValue<void> controller) => SizedBox(
-        height: 240,
+        height: MediaQuery.of(context).size.height / 3.5,
         child: Stack(
           children: [
             Container(
-              height: 160,
-              width: MediaQuery.of(context).size.width,
-              padding: const EdgeInsets.only(left: 32.0, right: 12.0),
+              height: MediaQuery.of(context).size.height / 2,
+              width: MediaQuery.of(context).size.width / 1.15,
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
               decoration: const BoxDecoration(
                   color: Color.fromRGBO(255, 255, 255, 0.8),
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(10),
-                      bottomLeft: Radius.circular(10))),
+                      bottomLeft: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                      bottomRight: Radius.circular(10))),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
