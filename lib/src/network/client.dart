@@ -11,7 +11,8 @@ Dio client(ClientRef ref) {
 
   final dio = Dio(
     BaseOptions(
-      baseUrl: 'https://a6ce-114-125-88-120.ngrok-free.app',
+      // Tiap kali generate url, baseUrl ni ganti
+      baseUrl: 'https://d4a5-180-253-163-126.ngrok-free.app',
       headers: {'Authorization': 'Bearer $token', 'Accept': 'application/json', 'ngrok-skip-browser-warning' : '1'},
     ),
   );
