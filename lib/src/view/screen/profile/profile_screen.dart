@@ -1,6 +1,10 @@
+// ignore: unused_import
 import 'package:e_commerce_flutter/src/utils/secure_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+//  title: const Text('Keluar'),
+//             trailing: const Icon(Icons.arrow_back_rounded),
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -9,22 +13,58 @@ class ProfileScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Profil",
-          style: Theme.of(context).textTheme.displayLarge,
-        ),
+        title: Text('Profile'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ListTile(
-            onTap: () {
-              ref.read(secureStorageProvider.notifier).remove('token');
-            },
-            title: const Text('Keluar'),
-            trailing: const Icon(Icons.arrow_back_rounded),
-          )
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              radius: 80,
+              backgroundImage: AssetImage('assets/images/profile_pic.png'),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'steven',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 10),
+            Text(
+              'pelanggan',
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.email),
+                SizedBox(width: 5),
+                Text('kalender@mail.com'),
+              ],
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.phone),
+                SizedBox(width: 5),
+                Text('08233242'),
+              ],
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                ref.read(secureStorageProvider.notifier).remove('token');
+                // Aksi logout di sini
+                print('Logout');
+              },
+              child: Text('Logout'),
+            ),
+          ],
+        ),
       ),
     );
   }
